@@ -1,1 +1,2 @@
-Summary for MSE module Electrical Energy Systems
+# AppElm
+Repository for MSE Module Applied Electromagnetics

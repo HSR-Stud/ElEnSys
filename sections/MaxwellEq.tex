@@ -1,0 +1,122 @@
+\section{Maxwell Equations}
+
+\subsection{Integral form}
+\begin{multicols}{2}
+	\textbf{Gauss's law, 1835\newline}
+	\noindent The electric flux density $\vec{D} = \epsilon \vec{E}$ through a closed oriented area $(A)$ is equal to the total electric charge $Q$ which is surrounded by this area.
+	\begin{equation}
+		\oiint\limits_{\left(\partial\Omega\right)} \vec{D}\left(\vec{r}\right)\cdot d\vec{S}\left(\vec{r}\right) = Q = \iiint\limits_{\left(\Omega\right)}\rho\left(\vec{r}\right)\cdot dV\left(\vec{r}\right)
+	\end{equation}
+	
+	\textbf{Coulomb's law, 1785\newline}
+	\noindent The magnetic flux trough a closed oriented area is alway zero! This means there are no magnetic monopols.
+	\begin{equation}
+		\oiint\limits_{\left(\partial\Omega\right)} \vec{B}\left(\vec{r}\right)\cdot d\vec{S}\left(\vec{r}\right) = 0
+	\end{equation}
+	
+	\textbf{Ampère's law, 1826\newline}
+	The sum of all currents through a closed oriented area can be computed as
+	\begin{equation}
+		\oint\limits_{\left(\partial S\right)} \vec{H}\left(\vec{r}\right)\cdot d\vec{l}\left(\vec{r}\right) = \sum_{i=1}^{N} I_i = \iint\limits_{\left(S\right)}\vec{J}\left(\vec{r}\right)\cdot d\vec{S}\left(\vec{r}\right)
+	\end{equation}
+	
+	\textbf{Faraday's law, 1831\newline}
+	A time-dependent magnetic flux induces an electrical voltage.
+	\begin{equation}
+		u_i = \oint\limits_{\left(\partial S\right)} \vec{E}\left(\vec{r}\right)\cdot d\vec{l}\left(\vec{r}\right) = -\frac{\partial \Phi}{\partial t} = -\frac{\partial}{\partial t} \iint\limits_{\left(S\right)} \vec{B}\left(\vec{r}\right)\cdot d\vec{S}\left(\vec{r}\right) 
+	\end{equation}
+\end{multicols}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.7\textwidth]{./images/MaxwellEqImages.pdf}
+\end{figure}
+
+\subsection{Maxwell Equations in time domain}
+Using Gauss and Stokes Theorem on (1)-(4) the following Maxwell Equations in time domain can be obtained as 
+
+\begin{multicols}{2}
+	\begin{equation*}
+		\nabla \cdot \vec{D} = \rho
+	\end{equation*}
+	\begin{equation*}
+		\nabla \cdot \vec{B} = 0
+	\end{equation*}
+	\begin{equation*}
+		\nabla \times \vec{H} = \vec{J} + \frac{\partial \vec{D}}{\partial t} = \sigma \vec{E} + \epsilon \frac{\partial \vec{E}}{\partial t}
+	\end{equation*}
+	\begin{equation*}
+		\nabla \times \vec{E} = - \frac{\partial \vec{B}}{\partial t}
+	\end{equation*}
+	
+	\begin{equation*}
+		\nabla \cdot \vec{E} = \frac{\rho}{\epsilon}
+	\end{equation*}
+	\begin{equation*}
+		\nabla \cdot \vec{H} = 0
+	\end{equation*}
+	\begin{equation*}
+		\nabla \times \vec{B} = \mu\left(\vec{J} + \frac{\partial \vec{D}}{\partial t}\right)
+	\end{equation*}
+	\begin{equation*}
+		\nabla \times \vec{E} = -\mu \frac{\partial \vec{H}}{\partial t}
+	\end{equation*}
+\end{multicols}
+
+\subsection{Maxwell Equations in frequency domain}
+If the field sources are harmonic sinusoidal time functions, the fields must have also this time dependence if the involved materials are linear. The fields can be represented as the following complex vectors
+\begin{equation*}
+	\vec{F}\left(\vec{r},t\right) = \Re\{\underline{\vec{F}}\left(\vec{r}\right) \cdot e^{j\omega t}\}.
+\end{equation*}
+The main advantage of this approach is the following elimination of the time derivatives
+\begin{equation*}
+	\frac{\partial}{\partial t}\left(e{j \omega t}\right) = j \omega^\cdot e^{j \omega t}
+\end{equation*}
+applied to the Maxwell Equations in time domain the following is obtained
+\begin{equation*}
+	\nabla \cdot \underline{\vec{D}}\left(\vec{r}\right) = \underline{\rho}\left(\vec{r}\right)
+\end{equation*}
+\begin{equation*}
+	\nabla \cdot \underline{\vec{B}}\left(\vec{r}\right) = 0
+\end{equation*}
+\begin{equation*}
+	\nabla \times \underline{\vec{H}}\left(\vec{r}\right) = \underline{\vec{J}}\left(\vec{r}\right) + j \omega \cdot \underline{\vec{D}}\left(\vec{r}\right)
+\end{equation*}
+\begin{equation*}
+	\nabla \times \underline{\vec{E}}\left(\vec{r}\right) = - j\omega \underline{\vec{B}}\left(\vec{r}\right)
+\end{equation*}
+
+\subsection{Potentials}
+\subsubsection{Electric scalar potential}
+In case when the electric charge is present and the magnetic field does not depend on time the following can be written
+\begin{equation*}
+	\nabla \cdot \vec{D} = \nabla \cdot \left(\epsilon \vec{E}\right) = \rho
+\end{equation*}
+\begin{equation*}
+	\nabla \times \vec{E} = 0
+\end{equation*}
+Due to the fact that a curl of a gradient is always equal to zero, it is possible in this case to represent the electric field as a gradient of a scalar function as
+\begin{equation*}
+	\vec{E} = -\nabla \Phi
+\end{equation*}
+which is called the electric scalar potential. It must fulfil the following partial differential equation
+\begin{equation*}
+	-\nabla \cdot \left(\epsilon \nabla \Phi\right) = \rho
+\end{equation*}
+
+\subsubsection{magnetic vector potential}
+In case when the electric field does not depend on time the following can be written
+\begin{equation*}
+	\nabla \cdot \vec{B} = 0
+\end{equation*}
+\begin{equation*}
+	\nabla \times \vec{H} = \vec{J}
+\end{equation*}
+Due to the fact that a divergence of a curl is always equal to zero, it is possible in this case to represent the magnetic flux density as a curl of a vector function 
+\begin{equation*}
+	\vec{B} = \nabla \times \vec{A}
+\end{equation*}
+which is called the magnetic vector potential. It must fulfil the following partial differential equation
+\begin{equation*}
+	\underbrace{\underbrace{\nabla \times \left(\frac{1}{\mu}\underbrace{\nabla \times \vec{A}}_{\bot}\right)}_{\bot} = \vec{J}}_{||}
+\end{equation*}
